@@ -1,5 +1,6 @@
 <?php
 namespace App\Models;
+use App\Models\Simple\CSVModel;
 
 /*
  * Mock travel destination data.
@@ -7,14 +8,17 @@ namespace App\Models;
  */
 
 class Places {
+    protected $origin = WRITEPATH . 'data/placesData.csv';
+    protected $keyField = 'id';
+    protected $validationRules = [];
 
     //mock data : an array of records
     protected $data = [
         '1' => [
             'id' => 1,
-            'name' => 'Hong Kong',
-            'description' => 'A special administrative region on the eastern side of the Pearl River estuary in southern China.',
-            'link' => 'http://www.discoverhongkong.com/eng/index.jsp',
+            'name' => 'Hongkong',
+            'description' => '',
+            'link' => 'https://baike.baidu.com/item/%E7%8A%AF%E7%BD%AA%E5%BF%83%E7%90%86/16916?fr=aladdin',
             'image' => 'hongkong.jpg',
         ],
         '2' => [
