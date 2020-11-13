@@ -50,16 +50,4 @@ class Places {
             'image' => 'vietnam.jpg',
         ],
     ];
-
-    public function findAll() {
-        return $this->data;
-    }
-
-    public function find($id = null) {
-        if (!empty($id) && isset($this->data[$id])) {
-            return $this->data[$id];
-        }
-        return null;
-    }
-
 }

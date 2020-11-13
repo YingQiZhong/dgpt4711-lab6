@@ -5,6 +5,16 @@ namespace App\Controllers;
 class Travel extends BaseController {
 
     public function index() {
+        $table = new \CodeIgniter\View\Table();
+        $headings = $places->fields;
+        $displayHeadings = array_slice($headings, 1, 2);
+        $table->setHeading(array_map('ucfirst', $displayHeadings));
+        foreach ($records as $record) {
+            $table->addRow($record->name,$record->description);
+        }
+        return $table->generate(); 
+
+
         // connect to the model 
         $places = new \App\Models\Places(); 
         // retrieve all the records    
